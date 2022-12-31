@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+connection: local
+gather_facts: false
+vars:
+  key_name: terraform
+tasks:
+  - name: Template backend.tf values file
+    template:
+      src: templates/backend.tf.j2
+      dest: "nginx_proxy_tf/backend.tf"
+      mode: "666"
