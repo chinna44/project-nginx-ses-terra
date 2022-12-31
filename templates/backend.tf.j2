@@ -1,0 +1,7 @@
+terraform {
+  backend "s3" {
+    region     = "{{ bucket_region }}"
+    bucket     = "{{ state_bucket }}"
+    encrypt    = " {{ tf_state_remote_dir }}/{{ key_name }}.tfstate"
+  }
+}
